@@ -19,15 +19,28 @@
         <form method="post" action="store.php">
             <div class="mb-6">
                 <label for="id" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Identifiant</label>
-                <input type="text" id="id"
+                <input type="text" name="login"
                     class="bg-gray-50 border border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
                     placeholder="p.nom" required>
             </div>
             <div class="mb-6">
                 <label for="password" class="block mb-2 text-sm font-medium text-fuchsia-700">Mot de passe</label>
-                <input type="password" id="password"
+                <input type="password" name="pwd"
                     class="bg-gray-50 border border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
                     placeholder="Mot de passe" required>
+</br>
+                    <?php
+if(isset($_GET["erreur"])){
+    if($_GET["erreur"]==1){
+        echo("<p class=text-red-500 >Mot de passe ou identifiant incorrect</p>");
+    }
+else if($_GET["erreur"]==2) {
+    echo('<p class=text-red-500 >Veuillez vous connecter</p>');
+}
+else{
+
+}
+}?>
             </div>
             <div class="mb-6">
                 <a class="underline text-fuchsia-700 hover:text-fuchsia-600" href="mdpoublie.php">Mot de passe oublié</a>
@@ -37,6 +50,7 @@
                 connecter</button>
         </form>
     </div>
+
 </body>
 
 </html>
