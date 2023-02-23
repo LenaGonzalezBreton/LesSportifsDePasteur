@@ -5,7 +5,7 @@
 
     'nzjRLN0!RirP'
 );
-    $requete = $mysqlConnection->prepare('SELECT * FROM user WHERE login= :login AND pwd= :pwd');
+    $requete = $mysqlConnection->prepare('SELECT * FROM user WHERE login= :login OR email= :login  AND pwd= :pwd');
     $requete->execute([
         'login' => $_POST["login"],
         'pwd' => $_POST["pwd"],
@@ -15,7 +15,9 @@
     if($ligne){
         session_start();
         $_SESSION["login"]=$_POST["login"];
-        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.html?erreur=0");
+        $password=$_POST["pwd"];
+        $hashed_password=hash('sha256', $password);
+        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
     }
     else
     {

@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +30,13 @@
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
           <ul class="py-2" aria-labelledby="user-menu-button">
             <li>
-              <a href="login.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Se connecter</a>
+            <?php
+                if(isset($_SESSION["login"])){
+                echo("<a href=logout.php class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se déconnecter</a>");
+                }
+                else{
+                    echo("<a href=login.php class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se connecter</a>");
+                }?>
             </li>
           </ul>
         </div>
