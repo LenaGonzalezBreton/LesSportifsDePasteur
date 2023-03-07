@@ -13,7 +13,7 @@
     $ligne= $requete->fetch();
     //var_dump($ligne);die();
     if($ligne){
-        session_start();
+       
         $_SESSION["login"]=$_POST["login"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
