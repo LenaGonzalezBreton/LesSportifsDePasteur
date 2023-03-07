@@ -16,7 +16,7 @@
     <div class="text-xl text-white flex justify-center text mt-40 text-4xl -">LES SPORTIFS DE PASTEUR</div>
     <div
         class="sm:max-w-md mt-6 px- py-4 rounded-lg bg-neutral-800 flex justify-center items-center w-full mx-auto shadow">
-        <form method="post" action="store.php">
+        <form method="post" action="index.php?route=store">
             <div class="mb-6">
                 <label for="id" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Identifiant</label>
                 <input type="text" name="login"

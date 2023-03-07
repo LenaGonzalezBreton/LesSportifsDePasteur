@@ -21,6 +21,6 @@
     }
     else
     {
-        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/login.php?erreur=1");
+        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/page/auth/login.php?erreur=1");
     }
     ?>

@@ -95,7 +95,7 @@ session_start()
     </button>
 </div>
 <div>
-    COUCOU
+
 </div>
     
 </body>
