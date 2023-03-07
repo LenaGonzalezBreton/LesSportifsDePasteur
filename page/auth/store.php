@@ -13,7 +13,7 @@
     $ligne= $requete->fetch();
     //var_dump($ligne);die();
     if($ligne){
-        session_start();
+       
         $_SESSION["login"]=$_POST["login"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
@@ -21,6 +21,6 @@
     }
     else
     {
-        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/login.php?erreur=1");
+        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/page/auth/login.php?erreur=1");
     }
     ?>
