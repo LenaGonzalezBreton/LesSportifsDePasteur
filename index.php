@@ -1,4 +1,3 @@
-<?php    session_start();?>
 <html>
     <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
@@ -53,7 +52,13 @@ if (isset($_SESSION["success"])){
                 break;
             case "mdpoublie":
                 include("page/auth/mdpoublie.php");
-                break;                                            
+                break;   
+            case "modifprofil":
+              include("page/profil/modifprofil.php");
+              break;
+              case "update_id":
+                include("page/profil/update_id.php");
+                break;                                          
             default : 
             if(isset($_SESSION["login"])){
               echo "ERROR";

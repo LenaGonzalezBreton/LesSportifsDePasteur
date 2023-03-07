@@ -3,24 +3,27 @@
 
     'unicorp', 
 
-    'nzjRLN0!RirP'
+    'nzjRLN0!RirP',
+    
+    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
 );
     $requete = $mysqlConnection->prepare('SELECT * FROM user WHERE login= :login OR email= :login  AND pwd= :pwd');
     $requete->execute([
         'login' => $_POST["login"],
         'pwd' => $_POST["pwd"],
     ]);
-    $ligne= $requete->fetch();
+    session_start();
+    $user= $requete->fetch();
     //var_dump($ligne);die();
-    if($ligne){
+    if($user){
        
         $_SESSION["login"]=$_POST["login"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
-        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
+        header("Location:index.php?route=welcome");
     }
     else
     {
-        header("Location:http://127.0.0.1/les_sportifs_de_pasteur/page/auth/login.php?erreur=1");
+        header("Location:index.php?route=welcome?erreur=1");
     }
     ?>

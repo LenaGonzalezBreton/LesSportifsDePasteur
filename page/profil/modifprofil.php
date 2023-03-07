@@ -24,14 +24,14 @@ if (isset($_SESSION["login"])){
     ?>
      <div class="row">
         <div class="col center">
-          <form action="update_id.php?id=<?= $_GET["id"]?>?modif=modif_login" method="post">
+          <form action="index.php?route=update_id?id=<?= $_GET["id"]?>?modif=modif_login" method="post">
             <div class="form-group">
               <label for="login">login</label>
               <input type="text" class="form-control" id="login" name="login" value=""/>
             </div>         
             <button type="submit" class="btn btn-primary">Modifer login</button>
           </form>
-          <form action="update_id.php?id=<?= $_GET["id"]?>?modif=modif_mail" method="post">
+          <form action="index.php?route=update_id?id=<?= $_GET["id"]?>?modif=modif_mail" method="post">
             <div class="form-group">
               <label for="mail">mail</label>
               <input type="text" class="form-control" id="mail" name="mail" value=""/>
@@ -47,6 +47,6 @@ if (isset($_SESSION["login"])){
 else
 {
     $_SESSION["error"]="il faut être connecté pour avoir acces";
-    header("location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
+    header("location:index.php?route=welcome");
 }
 ?>
