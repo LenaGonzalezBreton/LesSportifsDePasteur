@@ -16,11 +16,11 @@
     $user= $requete->fetch();
     //var_dump($ligne);die();
     if($user){
-       
+
         $_SESSION["login"]=$_POST["login"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
-        header("Location:index.php?route=welcome");
+        header("Location:index.php?route=welcome&id=".$user["id_user"]);
     }
     else
     {

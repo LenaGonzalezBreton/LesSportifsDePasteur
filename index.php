@@ -54,9 +54,9 @@ if (isset($_SESSION["success"])){
                 include("page/auth/mdpoublie.php");
                 break;   
             case "modifprofil":
-              include("page/profil/modifprofil.php");
-              break;
-              case "update_id":
+                include("page/profil/modifprofil.php");
+                break;
+            case "update_id":
                 include("page/profil/update_id.php");
                 break;                                          
             default : 
