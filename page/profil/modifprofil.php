@@ -49,3 +49,29 @@ else
     header("location:index.php?route=welcome");
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="index.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <center><div id="color" class="p2"><button class="mon-bouton">Changer photo de profil</button>
+                                       <button class="bouton">Changer addresse Mail</button>
+                                       <button class="tbouton">Changer mot de passe</button>
+    </div></center>
+</body>
+    
+
+</html>
