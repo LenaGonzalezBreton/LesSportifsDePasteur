@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET["modif"])){
-if($_GET["modif"]==modif_login){
+if($_GET["modif"]==1){
 if (isset($_POST["login"])==false || empty($_POST["login"])){
 
     $_SESSION["error"]="Le login est obligatoire";
@@ -26,11 +26,11 @@ $mysqlConnection = null;
 $requete = null;
 $_SESSION["success"]="login modifié avec succès";
    
-header("location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
+header("location:index.php?route=welcome&id=".$_GET["id"]);
 }
 }
 
-else if($_GET["modif"]==$_GETmodif_mail){
+else if($_GET["modif"]==2){
     if (isset($_POST["mail"])==false || empty($_POST["mail"])){
 
         $_SESSION["error"]="Le mail est obligatoire";
@@ -55,7 +55,7 @@ else if($_GET["modif"]==$_GETmodif_mail){
     $requete = null;
     $_SESSION["success"]="mail modifié avec succès";
        
-    header("location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
+    header("location:index.php?route=welcome&id=".$_GET["id"]);
     }
 }
 }

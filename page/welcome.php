@@ -1,23 +1,5 @@
 <?php
 session_start();
-
-$mysqlConnection = new PDO(
-    'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8',
-    
-    'unicorp', 
-
-    'nzjRLN0!RirP',
-
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
-);
-
-// ordre de mission
-$requete = $mysqlConnection->prepare('SELECT * FROM user');
-//execution de la requete
-$user=$requete->execute();
-$mysqlConnection = null;
-$requete = null;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +33,7 @@ $requete = null;
             <?php
                 if(isset($_SESSION["login"])){
                     echo("<a href=index.php?route=logout class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se déconnecter</a>
-                    <a href=index.php?route=modifprofil?id=".$user["id_user"]." class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Modifier son profil</a>");
+                    <a href=index.php?route=modifprofil&id=".$_GET["id"]." class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Modifier son profil</a>");
                     }
                 else{
                     echo("<a href=index.php?route=login class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se connecter</a>");

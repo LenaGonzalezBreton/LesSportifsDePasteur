@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location:http://127.0.0.1/les_sportifs_de_pasteur/welcome.php?erreur=0");
+header("Location:index.php?route=welcome");
 ?>

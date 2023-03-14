@@ -1,7 +1,6 @@
 <?php
-session_start()
-?>
-<?php
+session_start();
+
 if (isset($_SESSION["login"])){
   $mysqlConnection = new PDO(
     'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8',
@@ -24,14 +23,14 @@ if (isset($_SESSION["login"])){
     ?>
      <div class="row">
         <div class="col center">
-          <form action="index.php?route=update_id?id=<?= $_GET["id"]?>?modif=modif_login" method="post">
+          <form action="index.php?route=update_id&id=<?= $_GET["id"]?>&modif=1" method="post">
             <div class="form-group">
               <label for="login">login</label>
               <input type="text" class="form-control" id="login" name="login" value=""/>
             </div>         
             <button type="submit" class="btn btn-primary">Modifer login</button>
           </form>
-          <form action="index.php?route=update_id?id=<?= $_GET["id"]?>?modif=modif_mail" method="post">
+          <form action="index.php?route=update_id&id=<?= $_GET["id"]?>&modif=2" method="post">
             <div class="form-group">
               <label for="mail">mail</label>
               <input type="text" class="form-control" id="mail" name="mail" value=""/>
