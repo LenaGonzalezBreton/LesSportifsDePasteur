@@ -3,13 +3,13 @@ session_start();
 
 if (isset($_SESSION["login"])){
   $mysqlConnection = new PDO(
-    'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8',
+  'mysql:host='.SERVEUR';dbname='.DBNAME';charset=utf8', 
 
-    'unicorp', 
+  USER, 
 
-    'nzjRLN0!RirP',
-
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
+  PASSWORD,
+    
+  [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
 );
 
   // ordre de mission
