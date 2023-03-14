@@ -1,0 +1,41 @@
+.p2{
+    background-color: grey;
+    width: 40%;
+    height: 100%;
+    padding: 150px; 
+    margin: 200px;
+    text-decoration:none;
+    color: aliceblue;
+    text-align:center;
+    font-weight:bold;
+}
+.mon-bouton {
+    background-color: #9b4d9e;
+    padding: 12px 24px;
+    bottom: 100px;
+    border-radius: 20px;
+  }
+.mon-bouton {
+    position: relative;
+    left: 120px;
+}
+.bouton {
+    background-color: #9b4d9e;
+    padding: 12px 24px;
+    bottom: 10px;
+    border-radius: 20px;
+  }
+.bouton {
+    position: relative;
+    left: 120px;
+}
+.tbouton {
+    background-color: #9b4d9e;
+    padding: 12px 24px;
+    bottom: -80px;
+    border-radius: 20px;
+  }
+.tbouton {
+    position: relative;
+    left: 120px;
+}
