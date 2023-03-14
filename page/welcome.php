@@ -1,54 +1,3 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue les sportifs !</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-neutral-900">
-    
-<nav class="bg-fuchsia-900 px-2 sm:px-4 py-2.5 rounded">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <a href="welcome.html" class="flex items-center">
-        <img src="assets/logosite.png" class="h-6 mr-3 sm:h-11 hover:animate-spin" alt="Logosite" />
-        <span class="flex justify-center text-xl font-semibold whitespace-nowrap">Les Sportifs De Pasteur</span>
-    </a>
-    <div class="flex items-center md:order-2">
-        <button type="button" class="flex mr-3 text-sm rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-        <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-            <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-        </div>
-        </button>
-        <!-- Dropdown menu -->
-        <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
-          <ul class="py-2" aria-labelledby="user-menu-button">
-            <li>
-            <?php
-                if(isset($_SESSION["login"])){
-                    echo("<a href=index.php?route=logout class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se déconnecter</a>
-                    <a href=index.php?route=modifprofil&id=".$_GET["id"]." class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Modifier son profil</a>");
-                    }
-                else{
-                    echo("<a href=index.php?route=login class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se connecter</a>");
-                }?>
-            </li>
-          </ul>
-        </div>
-        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6"></svg>
-      </button>
-    </div>
-    </div>
-  </nav>
-  
 <div id="indicators-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
     <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
@@ -95,9 +44,3 @@ session_start();
         </span>
     </button>
 </div>
-<div>
-
-</div>
-    
-</body>
-</html>

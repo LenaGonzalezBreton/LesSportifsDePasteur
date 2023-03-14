@@ -1,10 +1,11 @@
+<?php     session_start(); ?>
 <html>
     <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
+    <body class="bg-neutral-900">
 <?php
 include("config/database.php");
 if (isset($_SESSION["error"])){
@@ -28,6 +29,12 @@ if (isset($_SESSION["success"])){
     </div>
     <?php
   }
+  if(isset($_GET["route"])){
+    if($_GET["route"]!="login"){
+      include("common/header.php");
+    }
+  }
+
   ?>
 <div class="container">
   <div class="row">

@@ -1,17 +1,12 @@
-<html>
-    <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
-        
+        <script src="https://cdn.tailwindcss.com"></script>        
 <nav class="bg-fuchsia-900 shadow-lg border-gray-200 px-2 sm:px-4 py-2.5 rounded-b">
             <div class="container flex flex-wrap items-center mx-auto grid grid-cols-3 w-screen">
-                        <a href="index.php" class="flex items-center">
+                        <div class="flex items-center">
                             <img src="logosite.png" class="mr-5 sm:h-14 hover:animate-spin" alt="Logosite" />
                             <span class="self-center text-xl font-semibold whitespace-nowrap">Les sportifs de Pasteur</span>
-                        </a>         
+    </div>         
                         <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
                             <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-24 md:mt-0 md:text-sm md:font-medium md:border-0 md:transparent">
                                 <li>
@@ -40,8 +35,15 @@
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Modifier</a>
                                 </li>
                                 <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Se dÃ©connecter</a>
-                                </li>
+                                <?php
+                if(isset($_SESSION["login"])){
+                    echo("<a href=index.php?route=logout class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se déconnecter</a>
+                    <a href=index.php?route=modifprofil&id=".$_GET["id"]." class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Modifier son profil</a>");
+                    }
+                else{
+                    echo("<a href=index.php?route=login class=block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100>Se connecter</a>");
+                }?>
+                            </li>
                             </ul>
                             </div>
                             <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
@@ -51,6 +53,3 @@
                         </div>
 </div>   
   </nav>
-
-    </body>
-</html>

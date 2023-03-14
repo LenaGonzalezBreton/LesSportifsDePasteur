@@ -1,5 +1,4 @@
 <?php
-session_start();
 session_destroy();
-header("Location:index.php?route=welcome");
+echo "<script>Location:index.php?route=welcome</script>";
 ?>

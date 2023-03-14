@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (isset($_SESSION["login"])){
   $mysqlConnection = new PDO(
     'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8',
@@ -46,7 +44,7 @@ if (isset($_SESSION["login"])){
 else
 {
     $_SESSION["error"]="il faut être connecté pour avoir acces";
-    header("location:index.php?route=welcome");
+    echo"<script>window.location.href='index.php?route=login'</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -60,11 +58,6 @@ else
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="index.css" rel="stylesheet"/>
-    <style>
-        body {
-            background-color: #000;
-        }
-    </style>
 </head>
 <body>
     <center><div id="color" class="p2"><button class="mon-bouton">Changer photo de profil</button>

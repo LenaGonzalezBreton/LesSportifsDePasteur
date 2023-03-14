@@ -12,18 +12,18 @@
         'login' => $_POST["login"],
         'pwd' => $_POST["pwd"],
     ]);
-    session_start();
+
     $user= $requete->fetch();
-    //var_dump($ligne);die();
+  
     if($user){
 
         $_SESSION["login"]=$_POST["login"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
-        header("Location:index.php?route=welcome&id=".$user["id_user"]);
+        echo"<script>window.location.href='index.php?route=welcome&id=".$user["id_user"]."'</script>";
     }
     else
     {
-        header("Location:index.php?route=welcome?erreur=1");
+        echo"<script>window.location.href='index.php?route=login&erreur=1'</script>";
     }
     ?>
