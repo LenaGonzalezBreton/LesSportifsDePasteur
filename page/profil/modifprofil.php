@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION["login"])){
   $mysqlConnection = new PDO(
-  'mysql:host='.SERVEUR';dbname='.DBNAME';charset=utf8', 
+  'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8', 
 
   USER, 
 

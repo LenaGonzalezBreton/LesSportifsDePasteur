@@ -8,8 +8,8 @@ if (isset($_POST["login"])==false || empty($_POST["login"])){
 }
 else
 {
-    <?php $mysqlConnection = new PDO(
-        'mysql:host='.SERVEUR';dbname='.DBNAME';charset=utf8', 
+        $mysqlConnection = new PDO(
+        'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8', 
     
         USER, 
     
