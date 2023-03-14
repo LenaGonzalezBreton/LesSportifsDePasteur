@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-echo "<script>Location:index.php?route=welcome</script>";
+echo "<script>window.location.href='index.php?route=login'</script>";
 ?>

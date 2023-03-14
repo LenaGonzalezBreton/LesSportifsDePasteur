@@ -4,7 +4,7 @@
 <nav class="bg-fuchsia-900 shadow-lg border-gray-200 px-2 sm:px-4 py-2.5 rounded-b">
             <div class="container flex flex-wrap items-center mx-auto grid grid-cols-3 w-screen">
                         <div class="flex items-center">
-                            <img src="logosite.png" class="mr-5 sm:h-14 hover:animate-spin" alt="Logosite" />
+                            <img src="assets/logosite.png" class="mr-5 sm:h-14 hover:animate-spin" alt="Logosite" />
                             <span class="self-center text-xl font-semibold whitespace-nowrap">Les sportifs de Pasteur</span>
     </div>         
                         <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
