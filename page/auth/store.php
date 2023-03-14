@@ -1,9 +1,9 @@
 <?php $mysqlConnection = new PDO(
-    'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8', 
+    'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8', 
 
-    'unicorp', 
+    USER, 
 
-    'nzjRLN0!RirP',
+    PASSWORD,
     
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
 );

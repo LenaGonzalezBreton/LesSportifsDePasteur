@@ -8,13 +8,13 @@ if (isset($_POST["login"])==false || empty($_POST["login"])){
 }
 else
 {
-    $mysqlConnection = new PDO(
-        'mysql:host=db4free.net:3306;dbname=unicorp_bd;charset=utf8',
-        
-        'unicorp', 
+        $mysqlConnection = new PDO(
+        'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8', 
     
-        'nzjRLN0!RirP',
-
+        USER, 
+    
+        PASSWORD,
+        
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
     );
 
