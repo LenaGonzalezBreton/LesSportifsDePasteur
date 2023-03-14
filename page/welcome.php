@@ -17,7 +17,7 @@ session_start();
 <nav class="bg-fuchsia-900 px-2 sm:px-4 py-2.5 rounded">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a href="welcome.html" class="flex items-center">
-        <img src="logosite.png" class="h-6 mr-3 sm:h-11 hover:animate-spin" alt="Logosite" />
+        <img src="assets/logosite.png" class="h-6 mr-3 sm:h-11 hover:animate-spin" alt="Logosite" />
         <span class="flex justify-center text-xl font-semibold whitespace-nowrap">Les Sportifs De Pasteur</span>
     </a>
     <div class="flex items-center md:order-2">
@@ -54,23 +54,23 @@ session_start();
     <div class="relative h-96 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="portesouvertes.jpeg" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="assets/portesouvertes.jpeg" class="absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="joyeuxnoel.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="assets/joyeuxnoel.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="messedenoel.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="assets/messedenoel.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="btssio.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="assets/btssio.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 5 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="btsalternance.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="assets/btsalternance.jpg" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
     <!-- Slider indicators -->
