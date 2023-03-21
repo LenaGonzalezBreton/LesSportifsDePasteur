@@ -4,7 +4,7 @@ if($_GET["modif"]==1){
 if (isset($_POST["login"])==false || empty($_POST["login"])){
 
     $_SESSION["error"]="Le login est obligatoire";
-    header("location:index.php?route=edit-atelier&id=".$_GET["id"]);
+    echo"<script>window.location.href='index.php?route=modifprofil&id=".$_GET["id"]."'</script>";
 }
 else
 {
@@ -26,7 +26,7 @@ $mysqlConnection = null;
 $requete = null;
 $_SESSION["success"]="login modifié avec succès";
    
-header("location:index.php?route=welcome&id=".$_GET["id"]);
+echo"<script>window.location.href='index.php?route=welcome&id=".$_GET["id"]."'</script>";
 }
 }
 
@@ -34,7 +34,7 @@ else if($_GET["modif"]==2){
     if (isset($_POST["mail"])==false || empty($_POST["mail"])){
 
         $_SESSION["error"]="Le mail est obligatoire";
-        header("location:index.php?route=edit-atelier&id=".$_GET["id"]);
+        echo"<script>window.location.href='index.php?route=modifprofil&id=".$_GET["id"]."'</script>";
     }
     else
     {
@@ -54,8 +54,8 @@ else if($_GET["modif"]==2){
     $mysqlConnection = null;
     $requete = null;
     $_SESSION["success"]="mail modifié avec succès";
-       
-    header("location:index.php?route=welcome&id=".$_GET["id"]);
+
+    echo"<script>window.location.href='index.php?route=welcome&id=".$_GET["id"]."'</script>";
     }
 }
 }
