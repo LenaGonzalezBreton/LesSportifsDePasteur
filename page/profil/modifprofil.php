@@ -22,7 +22,7 @@ if (isset($_SESSION["login"])) {
 <p>
 
   <body class="bg-neutral-900">
-  <div class="text-xl text-white flex justify-center text mt-20 text-4xl">MODIFICATION DU PROFIL</div>
+  <div class="text-xl text-white flex justify-center text mt-40 text-4xl">MODIFICATION DU PROFIL</div>
       <div class="sm:max-w-md mt-6 px- py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow">
         <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=1">
           <div class="mb-6">

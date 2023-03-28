@@ -18,10 +18,10 @@
     if($user){
 
         $_SESSION["login"]=$_POST["login"];
-        $_SESSION["droit"]=$_POST["admin"];
+        $_SESSION["droit"]=$user["admin"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
-        echo"<script>window.location.href='index.php?route=welcome'</script>";
+        echo"<script>window.location.href='index.php?route=welcome&id=".$user["id_user"]."'</script>";
     }
     else
     {
