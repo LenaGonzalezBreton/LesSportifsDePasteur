@@ -8,61 +8,12 @@
  
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
   );
-<<<<<<< HEAD
- 
-  // ordre de mission
-  $requete = $mysqlConnection->prepare('SELECT admin FROM user where id_user =:id');
-  //execution de la requete
-  $requete->execute(["id" => $_GET["id"]]);
- 
-  $user = $requete->fetch();
-  $mysqlConnection = null;
-  $requete = null;
-  ?>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>        
-        <nav class="bg-fuchsia-900 shadow-lg border-gray-200 px-2 sm:px-4 py-2.5 rounded-b">
-            <div class="container flex flex-wrap items-center mx-auto grid grid-cols-3 w-screen">
-                        <div class="flex items-center">
-                            <img src="assets/logosite.png" class="mr-5 sm:h-14 hover:animate-spin" alt="Logosite" />
-                            <span class="self-center text-xl font-semibold whitespace-nowrap">Les sportifs de Pasteur</span>
-                        </div>     
-    <?php    
-    if ($_SESSION["droit"]=="N"){?>
-                        <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
-                            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-24 md:mt-0 md:text-sm md:font-medium md:border-0 md:transparent">
-                                <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">S'inscrire</a>
-                                </li>
-                                <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg ">Voir ses inscriptions</a>
-                                </li>
-                            </ul>
-                        </div> 
-                        <?php
-                        }
-    else if ($_SESSION["droit"]=="Y"){?>
-                        <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
-                            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-24 md:mt-0 md:text-sm md:font-medium md:border-0 md:transparent">
-                                <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">Sport</a>
-                                </li>
-                                <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg ">Seance</a>
-                                </li>
-                            </ul>
-                        </div>
-<?php }?>
-        USER,
-=======
   $requete = $mysqlConnection->prepare('SELECT prenom FROM user WHERE id_user=:id');
     $requete->execute([
         'id'=>$_GET["id"]
     ]);
 
     $user= $requete->fetch();
->>>>>>> b19ed7d2358ad29a39edfbc60dbf2601191b469a
 
   ?>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
