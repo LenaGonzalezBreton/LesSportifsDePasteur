@@ -65,7 +65,19 @@ if (isset($_SESSION["success"])){
                 break;
             case "update_id":
                 include("page/profil/update_id.php");
-                break;                                          
+                break;  
+            case 'addSport':
+                include("page/sport/addSport.php");
+                break;
+            case 'insertSport':
+                include("page/sport/insertSport.php");
+                break;
+            case 'addSeance':
+                include("page/seance/addSeance.php");
+                break;
+            case "insertSeance":
+                include("page/seance/insertSeance.php");
+                break;
             default : 
             if(isset($_SESSION["login"])){
               echo "ERROR";
