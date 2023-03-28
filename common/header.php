@@ -8,6 +8,7 @@
  
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
   );
+<<<<<<< HEAD
  
   // ordre de mission
   $requete = $mysqlConnection->prepare('SELECT prenom from user where id_user = :id');
@@ -17,6 +18,8 @@
   $user = $requete->fetch();
   $mysqlConnection = null;
   $requete = null;
+=======
+>>>>>>> d606f716223e3237a630c166c82aa88a6fdb7a1b
   ?>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
@@ -39,15 +42,20 @@
                                 </li>
                             </ul>
                         </div> 
+<<<<<<< HEAD
                         <?php }
+=======
+                        <?php
+                        }
+>>>>>>> d606f716223e3237a630c166c82aa88a6fdb7a1b
     else if ($_SESSION["droit"]=="Y"){?>
                         <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
                             <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-24 md:mt-0 md:text-sm md:font-medium md:border-0 md:transparent">
                                 <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">Sport</a>
+                                <a href="index.php?route=addSport" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">Sport</a>
                                 </li>
                                 <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg ">Seance</a>
+                                <a href="index.php?route=addSeance" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg ">Seance</a>
                                 </li>
                             </ul>
                         </div>
