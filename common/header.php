@@ -8,6 +8,13 @@
  
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
   );
+  $requete = $mysqlConnection->prepare('SELECT prenom FROM user WHERE id_user=:id');
+    $requete->execute([
+        'id'=>$_GET["id"]
+    ]);
+
+    $user= $requete->fetch();
+
   ?>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
