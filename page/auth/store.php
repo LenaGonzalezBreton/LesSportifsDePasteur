@@ -21,7 +21,7 @@
         $_SESSION["droit"]=$user["admin"];
         $password=$_POST["pwd"];
         $hashed_password=hash('sha256', $password);
-        echo"<script>window.location.href='index.php?route=welcome&id=".$user["id_user"]."'</script>";
+        echo"<script>window.location.href='index.php?route=welcome'</script>";
     }
     else
     {
