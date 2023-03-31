@@ -7,7 +7,7 @@
     
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
 );
-    $requete = $mysqlConnection->prepare('SELECT * FROM user WHERE login= :login OR email= :login  AND pwd= :pwd');
+    $requete = $mysqlConnection->prepare('SELECT * FROM user WHERE (login= :login OR email= :login)  AND pwd= :pwd');
     $requete->execute([
         'login' => $_POST["login"],
         'pwd' => $_POST["pwd"],
