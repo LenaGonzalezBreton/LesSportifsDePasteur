@@ -29,7 +29,7 @@ if (isset($_SESSION["login"])) {
             <label for="id" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Modifier le login</label>
             <input type="text" name="login"
               class="bg-gray-50 mb-2 border border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
-              placeholder="nouveau login">
+              placeholder="nouveau login" required>
             <button type="submit"
               class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
               Modifier</button>
@@ -41,7 +41,7 @@ if (isset($_SESSION["login"])) {
             <label for="mail" class="block mb-2 text-sm font-medium text-fuchsia-700">Modifier le mail</label>
             <input type="text" name="mail"
               class="bg-gray-50 border mb-2 border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
-              placeholder="nouveau mail">
+              placeholder="nouveau mail" required>
             <button type="submit"
               class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
               Modifier</button>

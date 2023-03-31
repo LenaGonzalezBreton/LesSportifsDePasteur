@@ -16,12 +16,18 @@ if (isset($_SESSION["login"])) {
  $requete->execute();
 
  $sports = $requete->fetchAll();
- $mysqlConnection = null;
  $requete = null;
+ $requete2 = $mysqlConnection->prepare('SELECT * FROM user WHERE id_user=:id');
+ $requete2->execute([
+     'id'=>$_GET["id"]
+ ]);
+
+ $user= $requete2->fetch();
+ $_SESSION["id"]=$user["id_user"];
 ?>
   <div>
     <div class="col center">
-      <form action="index.php?route=insertSeance" method="post">
+      <form action=<?php echo"'index.php?route=insertSeance&id=".$_SESSION["id"]."'"; ?>, method="post">
         <div class="form-group">
           <label for="seance">Séances</label>
           <input type="text" class="form-control" id="seance" name="seance" placeholder="Entrer une séance">

@@ -17,8 +17,11 @@ else
 $requete = $mysqlConnection->prepare('INSERT INTO seance(libelle_seance,fk_id_sport, dte_seance, heure_debut, heure_fin) values(:seance,:fk_id_sports,:dte,:hDebut,:hFin)');
 //execution de la requete
 $requete->execute( ["seance"=>$_POST["seance"],"fk_id_sports"=>$_POST["sports"], "dte"=>$_POST["dte"],"hDebut"=>$_POST["hDebut"], "hFin"=>$_POST["hFin"]]);
-$mysqlConnection = null;
 $requete = null;
+$requete2 = $mysqlConnection->prepare('SELECT * FROM user WHERE id_user=:id');
+$requete2->execute(['id'=>$_GET["id"]]);
+$user=$requete2->fetch();
+$_SESSION["id"]=$user["id_user"];
 $_SESSION["success"]="Séance crée avec succès";
-echo"<script>window.location.href='index.php?route=welcome&id='</script>";
+echo"<script>window.location.href='index.php?route=welcome&id=".$_SESSION["id"]."'</script>";
 }

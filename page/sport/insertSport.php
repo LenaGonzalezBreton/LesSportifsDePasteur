@@ -16,8 +16,11 @@ else
 $requete = $mysqlConnection->prepare('INSERT INTO sport (nom_sports) values(:sports)');
 $requete->execute(["sports"=>$_POST["sports"]]);
 $sport=$requete->fetch();
-$mysqlConnection = null;
 $requete = null;
+$requete2 = $mysqlConnection->prepare('SELECT * FROM user WHERE id_user=:id');
+$requete2->execute(['id'=>$_GET["id"]]);
+$user=$requete2->fetch();
+$_SESSION["id"]=$user["id_user"];
 $_SESSION["success"]="Sport crée avec succès";
-echo"<script>window.location.href='index.php?route=welcome&id='</script>";
+echo"<script>window.location.href='index.php?route=welcome&id=".$_SESSION["id"]."'</script>";
 }
