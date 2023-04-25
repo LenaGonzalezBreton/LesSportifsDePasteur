@@ -28,6 +28,16 @@ if (isset($_SESSION["success"])){
       ?>
     </div>
     <?php
+}
+if (isset($_SESSION["doublon"])){
+    ?>
+    <div class="alert alert-success" role="alert">
+      <?php 
+        echo $_SESSION["doublon"];
+        unset($_SESSION["doublon"]);
+      ?>
+    </div>
+    <?php
   }
   if(isset($_GET["route"])){
     if($_GET["route"]!="login"){
