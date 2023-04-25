@@ -30,7 +30,7 @@
                         <div class="items-center justify-center hidden w-full md:flex md:w-auto" id="mobile-menu-2">
                             <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-24 md:mt-0 md:text-sm md:font-medium md:border-0 md:transparent">
                                 <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">S'inscrire</a>
+                                <a href=<?php echo"'index.php?route=inscription&id=".$_SESSION["id"]."'"; ?>  class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg">S'inscrire</a>
                                 </li>
                                 <li>
                                 <a href=<?php echo"'index.php?route=welcome&id=".$_SESSION["id"]."'"; ?> class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:scale-125 md:p-0 md:text-lg ">Menu</a>

@@ -78,6 +78,9 @@ if (isset($_SESSION["success"])){
             case "insertSeance":
                 include("page/seance/insertSeance.php");
                 break;
+            case "inscription":
+              include("page/inscription/inscription.php");
+              break;
             default : 
             if(isset($_SESSION["login"])){
               echo "ERROR";
