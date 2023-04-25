@@ -42,8 +42,7 @@ if (isset($_SESSION["success"])){
       <?php
       
     if(isset($_GET["route"])){
-
-              
+               
           switch ($_GET["route"]){
             case "login":
               include("page/auth/login.php");
@@ -64,6 +63,7 @@ if (isset($_SESSION["success"])){
                 include("page/profil/modifprofil.php");
                 break;
             case "update_id":
+             
                 include("page/profil/update_id.php");
                 break;  
             case 'addSport':
