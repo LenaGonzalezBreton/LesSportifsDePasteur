@@ -22,8 +22,10 @@ if (isset($_SESSION["login"])) {
 <p>
 
   <body class="bg-neutral-900">
-  <div class="text-xl text-white flex justify-center text mt-40 text-4xl">MODIFICATION DU PROFIL</div>
-      <div class="sm:max-w-md mt-6 px- py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow">
+    <div class="text-xl text-white flex justify-center text mt-16 mb-8 text-4xl">MODIFICATION DU PROFIL</div>
+
+    <div class="grid grid-cols-2 ">
+      <div class="sm:max-w-md mt-6 mb-6 py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow ">
         <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=1">
           <div class="mb-6">
             <label for="id" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Modifier le login</label>
@@ -35,7 +37,6 @@ if (isset($_SESSION["login"])) {
               Modifier</button>
           </div>
         </form>
-
         <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=2">
           <div class="mb-6">
             <label for="mail" class="block mb-2 text-sm font-medium text-fuchsia-700">Modifier le mail</label>
@@ -46,8 +47,29 @@ if (isset($_SESSION["login"])) {
               class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
               Modifier</button>
           </div>
+      </div>
+
+      </form>
+      <div class="sm:max-w-md mt-6 mb-6 py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow ">
+        <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=3">
+          <div class="mb-6">
+            <label for="pwd" class="block mb-4 text-sm font-medium text-fuchsia-700">Modifier le mot de passe</label>
+            <input type="password" name="old_pwd" id="old_pwd"
+              class="bg-gray-50 border mb-4 border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
+              placeholder="Ancien mot de passe" required>
+            <input type="password" name="new_pwd" id="new_pwd"
+              class="bg-gray-50 border mb-2 border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
+              placeholder="Nouveau mot de passe" required>
+            <input type="password" name="confirm_pwd" id="confirm_pwd"
+              class="bg-gray-50 border mb-2 border-gray-300 text-fuchsia-700 text-sm rounded-lg focus:ring-fuchsia-700 focus:border-fuchsia-700 block w-full p-2.5 "
+              placeholder="Confirmer mot de passe" required>
+            <button type="submit"
+              class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+              Modifier</button>
+          </div>
         </form>
       </div>
+    </div>
 </p>
 
 </body>

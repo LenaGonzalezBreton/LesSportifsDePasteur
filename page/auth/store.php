@@ -1,4 +1,20 @@
-<?php $mysqlConnection = new PDO(
+<?php
+
+//require 'recaptchalib.php';
+//$siteKey = '6LftebglAAAAAMIJoRj1zxSjmT-yqO5b3r2rUQ7-'; // votre clé publique
+//$secret = '6LftebglAAAAAJXJtCiHfA58xjcroUSsKJ6FFNjx'; // votre clé privée
+
+//$reCaptcha = new ReCaptcha($secret);
+//if(isset($_POST["g-recaptcha-response"])) {
+  //  $resp = $reCaptcha->verifyResponse(
+    //    $_SERVER["REMOTE_ADDR"],
+      //  $_POST["g-recaptcha-response"]
+        //);
+    //if ($resp != null && $resp->success) {echo "OK";}
+    //else {echo "CAPTCHA incorrect";}
+    //}
+
+$mysqlConnection = new PDO(
     'mysql:host='.SERVER.';dbname='.DBNAME.';charset=utf8', 
 
     USER, 

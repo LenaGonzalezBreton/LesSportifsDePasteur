@@ -2,7 +2,7 @@
     <img src="assets/bannière.png" alt="Banniere">
  </div>
 
-<div class="flex justify-center mt-16 gap-1.5">
+<div class="flex justify-center mt-16 gap-1.5 mb-8">
 
     <!--Présentation -->
     <div class="grid grid-cols-2 gap-8">

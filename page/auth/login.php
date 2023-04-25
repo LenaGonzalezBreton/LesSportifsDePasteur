@@ -1,3 +1,9 @@
+<?php
+    //require 'recaptchalib.php';
+   // $siteKey = '6LftebglAAAAAMIJoRj1zxSjmT-yqO5b3r2rUQ7-'; // votre clé publique
+    //$secret = '6LftebglAAAAAJXJtCiHfA58xjcroUSsKJ6FFNjx'; // votre clé privée
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +15,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <!--<script src="https://www.google.com/recaptcha/api.js"></script>-->
 </head>
 
 <body class="bg-neutral-900">
+    
+
+
     <div class="text-xl text-white flex justify-center text mt-40 text-4xl -">LES SPORTIFS DE PASTEUR</div>
     <div
         class="sm:max-w-md mt-6 px- py-4 rounded-lg bg-neutral-800 flex justify-center items-center w-full mx-auto shadow">
@@ -45,6 +54,7 @@ else{
             <div class="mb-6">
                 <a class="underline text-fuchsia-700 hover:text-fuchsia-600" href="mdpoublie.php">Mot de passe oublié</a>
             </div>
+            <div class="g-recaptcha" data-sitekey="<?php echo $siteKey; ?>"></div>
             <button type="submit"
                 class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Se
                 connecter</button>
