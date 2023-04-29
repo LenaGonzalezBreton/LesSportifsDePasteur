@@ -66,7 +66,7 @@
                             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
                             <div class="px-4 py-3">
                                 <span class="block text-sm text-gray-900"></span>
-                                <span class="block text-sm font-medium text-gray-500 truncate">bonjour <?=$user["prenom"]?></span>
+                                <span class="block text-sm font-medium text-gray-500 truncate">Bonjour <?=$user["prenom"]?> !</span>
                             </div>
                             <ul class="py-2" aria-labelledby="user-menu-button">
                                 <li>

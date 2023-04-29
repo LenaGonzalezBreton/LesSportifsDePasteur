@@ -78,13 +78,16 @@ if (isset($_GET["modif"])) {
                 $requete->execute(["id" => $_GET["id"]]);
                 $resultat = $requete->fetch(PDO::FETCH_ASSOC);
 
-                if ($_POST["old_pwd"] != $resultat["pwd"]) {
+                if (!password_verify($_POST["old_pwd"], $resultat["pwd"])) {
                     $_SESSION["error"] = "Le mot de passe actuel est incorrect";
                     echo "<script>window.location.href='index.php?route=modifprofil&id=" . $_GET["id"] . "'</script>";
                 } else {
+
                     // Mise à jour du mot de passe
+                    $password = $_POST["new_pwd"];
+                    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                     $requete = $mysqlConnection->prepare('UPDATE user SET pwd = :new_pwd WHERE id_user = :id');
-                    $requete->execute(["id" => $_GET["id"], "new_pwd" => ($_POST["new_pwd"])]);
+                    $requete->execute(["id" => $_GET["id"], "new_pwd" => $passwordHash]);
                     $mysqlConnection = null;
                     $requete = null;
                     $_SESSION["success"] = "Mot de passe modifié avec succès";
