@@ -69,10 +69,12 @@ if (isset($_SESSION["login"])) {
           </div>
         </form>
         <label for="pwd" class="block mb-4 text-sm font-medium text-fuchsia-700">Modifier sa photo de profil</label>
-        <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=" enctype="multipart/form-data0" class="block mb-4 text-sm font-medium text-fuchsia-700"> 
-    <input type="file" name="photo" accept="image/*">
-    <input type="submit" value="Upload" class="text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
-</form>
+        <form method="post" action="index.php?route=update_id&id=<?= $_GET["id"] ?>&modif=4" enctype="multipart/form-data" class="block mb-4 text-sm font-medium text-fuchsia-700"> 
+    <input type="file" id="photo" name="photo" accept="image/*">
+    <br>
+    <button type="submit" value="Upload" class=" mt-2 flex text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Upload</button>
+</br>
+  </form>
 
       </div>
     </div>
