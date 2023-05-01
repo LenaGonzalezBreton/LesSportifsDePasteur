@@ -10,7 +10,7 @@
 include("config/database.php");
 if (isset($_SESSION["error"])){
   ?>
-  <div class="alert alert-danger" role="alert">
+  <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
     <?php 
       echo $_SESSION["error"];
       unset($_SESSION["error"]);
@@ -21,7 +21,7 @@ if (isset($_SESSION["error"])){
 }
 if (isset($_SESSION["success"])){
     ?>
-    <div class="alert alert-success" role="alert">
+    <div class="p-4 mb-4 text-sm text-purple-800 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-400s" role="alert">
       <?php 
         echo $_SESSION["success"];
         unset($_SESSION["success"]);
@@ -31,7 +31,7 @@ if (isset($_SESSION["success"])){
 }
 if (isset($_SESSION["doublon"])){
     ?>
-    <div class="alert alert-success" role="alert">
+    <div class="p-4 mb-4 text-sm text-purple-800 rounded-lg bg-purple-50 dark:bg-gray-800 dark:text-purple-400s" role="alert">
       <?php 
         echo $_SESSION["doublon"];
         unset($_SESSION["doublon"]);

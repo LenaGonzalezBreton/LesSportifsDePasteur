@@ -11,8 +11,8 @@ if (isset($_POST["sports"]) == false || empty($_POST["sports"])) {
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
     );
 
-    $requete = $mysqlConnection->prepare('SELECT nom_sports FROM sport');
-    $requete->execute();
+    $requete = $mysqlConnection->prepare('SELECT * FROM sport WHERE nom_sports=:sport');
+    $requete->execute(['sport' => $_POST["sports"]]);
     $sports = $requete->fetch();
 
     $requete2 = $mysqlConnection->prepare('SELECT * FROM user WHERE id_user=:id');
@@ -21,8 +21,7 @@ if (isset($_POST["sports"]) == false || empty($_POST["sports"])) {
     $_SESSION["id"] = $user["id_user"];
 }
 
-    foreach ($sports as $ligne) {
-        if ($_POST["sports"] == $sports["nom_sports"]) {
+        if ($sports) {
             $_SESSION["doublon"] = "Sport existe déjà";
             echo "<script>window.location.href='index.php?route=addSport&id=" . $_SESSION["id"] . "'</script>";
         } else {
@@ -32,5 +31,4 @@ if (isset($_POST["sports"]) == false || empty($_POST["sports"])) {
             $_SESSION["success"] = "Sport créé avec succès";
             echo "<script>window.location.href='index.php?route=welcome&id=" . $_SESSION["id"] . "'</script>";
         }
-    }
 ?>
