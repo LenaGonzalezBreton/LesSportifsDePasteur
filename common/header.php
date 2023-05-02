@@ -78,9 +78,13 @@
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                     data-dropdown-placement="bottom">
                     <span class="sr-only">Open user menu</span>
-
-                    <?php echo '<img class="rounded-full bg-cover bg-center w-12 h-12" src="' . $userPhoto[0] . '" alt="user photo" >' ?>
-
+                    <?php if (empty($userPhoto[0])) {
+                        $defaultPhoto = "iconuser.svg";
+                        echo '<img class="rounded-full bg-cover bg-center w-12 h-12" src="' . $defaultPhoto . '" alt="user photo" >';
+                    } else {
+                        echo '<img class="rounded-full bg-cover bg-center w-12 h-12" src="' . $userPhoto[0] . '" alt="user photo" >';
+                    }
+                    ?>
                 </button>
                 <!-- Dropdown menu -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow"
