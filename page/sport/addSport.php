@@ -36,16 +36,9 @@ if (isset($_SESSION["login"])) {
         </form>
     </div>
       <div class="sm:max-w-md mt-8 px- py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow">
-          <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+          
           <label for="id" class="block mb-10 text-sm font-medium text-fuchsia-700 ">Tableau sport</label>
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-        <th scope="col" class="px-5 py-3">Titre</th>
-        <th scope="col" class="px-10 py-3"></th>
-        <th scope="col" class="px-10 py-3"></th>
-        </tr>
-    </thead>
     <tbody> 
           <?php
         foreach ($mysqlConnection->query("SELECT * FROM sport") as $ligne){
@@ -61,6 +54,7 @@ if (isset($_SESSION["login"])) {
 
                 </td>
             </tr>
+            <?php } ?>
         </tbody>
         </table>
           </div>
@@ -69,7 +63,6 @@ if (isset($_SESSION["login"])) {
     </p>
 
     <?php
-    }
 } else {
   $_SESSION["error"] = "il faut être connecté pour avoir acces";
   header("location:./index.php");
