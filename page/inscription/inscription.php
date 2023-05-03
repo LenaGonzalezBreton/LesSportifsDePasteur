@@ -19,11 +19,11 @@ if (isset($_SESSION["login"])){
     );
 
     // ordre de mission
-    $requete = $mysqlConnection->prepare('SELECT * FROM sport_seance ss INNER JOIN seance s on ss.fk_id_seance=s.id_seance INNER JOIN sport sp on ss.fk_id_sport=sp.id_sports');
+    $requete = $mysqlConnection->prepare('SELECT * FROM seance s ');
     //execution de la requete
     $requete->execute();
 
-    $ateliers = $requete->fetchAll();
+    $seances = $requete->fetchAll();
     $mysqlConnection = null;
     $requete = null;
 
@@ -36,21 +36,19 @@ if (isset($_SESSION["login"])){
         <th scope="col">Date de la séance</th>
         <th scope="col">Heure de début</th>
         <th scope="col">Heure de fin</th>
-        <th scope="col">Sports</th>
         <th scope="col">S'inscrire</th>
-            </tr>
+    </tr>
     </thead>
     <tbody>
     <?php
-        foreach ($ateliers as $ligne){
+        foreach ($seances as $ligne){
             ?>
             <tr>
-                <th scope="row"><?= $ligne["id_atelier"] ?></th>
-                <td><?= $ligne["titre"]?></td>
-                <td><?= $ligne["libelle"]?></td>
+                <th scope="row"><?= $ligne["dte_seance"] ?></th>
+                <td><?= $ligne["heure_debut"] ?></td>
+                <td><?= $ligne["heure_fin"] ?></td>
                 <td>
-                    <a href="index.php?route=delete-atelier&id=<?= $ligne["id_atelier"] ?>"><button class="btn btn-danger">Supprimer</button></a>
-                    <a href="index.php?route=edit-atelier&id=<?= $ligne["id_atelier"] ?>"><button class="btn btn-info">Modifier</button></a>
+                    <a href="index.php?route=inscrire&id=<?= $ligne["id_seance"] ?>"><button class="btn btn-info">S'inscrire</button></a>
                 </td>
 
             </tr>
