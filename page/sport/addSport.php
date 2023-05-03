@@ -38,18 +38,18 @@ if (isset($_SESSION["login"])) {
       <div class="sm:max-w-md mt-8 px- py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow">
           
           <label for="id" class="block mb-10 text-sm font-medium text-fuchsia-700 ">Tableau sport</label>
-          <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <table class="w-full text-sm text-left text-gray-500 ">
     <tbody> 
           <?php
         foreach ($mysqlConnection->query("SELECT * FROM sport") as $ligne){
             ?>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $ligne["nom_sports"] ?></th>
-                <td class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+            <tr class="bg-neutral-700 border-b-2 border-neutral-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "><?= $ligne["nom_sports"] ?></th>
+                <td class="font-medium text-blue-600">
                     <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Supprimer</button></a>
 
                 </td>
-                <td class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                <td class="font-medium text-blue-600">
                     <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Modifier</button></a>
 
                 </td>
