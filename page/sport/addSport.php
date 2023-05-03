@@ -47,11 +47,7 @@ if (isset($_SESSION["login"])) {
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?= $ligne["nom_sports"] ?></th>
                 <td class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Supprimer</button></a>
-
-                </td>
-                <td class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                    <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Modifier</button></a>
-
+                  
                 </td>
             </tr>
             <?php } ?>
