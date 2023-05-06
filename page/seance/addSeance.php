@@ -24,6 +24,30 @@ if (isset($_SESSION["login"])) {
 
   $user = $requete2->fetch();
   $_SESSION["id"] = $user["id_user"];
+
+// Vérifier si l'ID de la séance a été envoyé
+if (isset($_GET['route']) && $_GET['route'] == "delete-atelier" && isset($_GET['id'])) {
+    $id_seance = $_GET['id'];
+    
+    // Connexion à la base de données
+    $mysqlConnection = new PDO(
+      'mysql:host=' . SERVER . ';dbname=' . DBNAME . ';charset=utf8',
+  
+      USER,
+  
+      PASSWORD,
+  
+      [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
+    );
+    
+    // Supprimer la séance correspondante
+    $stmt = $pdo->prepare('DELETE FROM seance WHERE id_seance = ?');
+    $stmt->execute([$id_seance]);
+    
+    // Rediriger l'utilisateur vers la page d'accueil ou une autre page
+    header('Location:./addseance.php');
+    exit();
+}
   ?>
 
   <!--HTML CSS de la page -->
@@ -64,20 +88,22 @@ if (isset($_SESSION["login"])) {
     </div>
     <div class="sm:max-w-md mt-6 px- py-4 rounded-lg bg-neutral-800 flex flex-col justify-center items-center w-full mx-auto shadow">
       <label for="id" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Tableau séances</label>
-      <table class="w-full text-sm text-left text-gray-500 bg-neutral-800">
+      <table class="w-full text-sm text-left text-gray-500 ">
         <tbody>
           <?php
          $res= $mysqlConnection->query("SELECT * FROM seance");
          $seances=$res->fetchAll(); 
           foreach ($seances as $ligne) {
             ?>
-            <tr class="bg-white border-b ">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+            <tr class="bg-neutral-700 border-b-2 border-neutral-800">
+              <th scope="row" class="px-6 py-4 font-medium text-white">
                 <?= $ligne["dte_seance"] ?>
               </th>
               <td class="font-medium text-blue-600 ">
-                <a href="index.php?route=delete-atelier&id=<?= $ligne["id_seance"] ?>"><button
-                    class="btn btn-danger text-fuchsia-700">Supprimer</button></a>
+              <a href="index.php?route=delete-atelier&id=<?= $ligne["id_seance"] ?>">
+              <button class="btn btn-danger text-fuchsia-700">Supprimer</button></a>
+
+          </td>
               <td>
                 <a href="index.php?route=edit-atelier&id=<?= $ligne["id_seance"] ?>"><button
                     class="btn btn-info">Modifier</button></a>
