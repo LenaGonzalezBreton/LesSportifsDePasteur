@@ -40,26 +40,33 @@ if (isset($_SESSION["login"])) {
           <label for="id" class="block mb-10 text-sm font-medium text-fuchsia-700 ">Tableau sport</label>
           <table class="w-full text-sm text-left text-gray-500 ">
     <tbody> 
-          <?php
+        <?php
         foreach ($mysqlConnection->query("SELECT * FROM sport") as $ligne){
             ?>
             <tr class="bg-neutral-700 border-b-2 border-neutral-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "><?= $ligne["nom_sports"] ?></th>
-                <td class="font-medium text-blue-600">
-                    <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Supprimer</button></a>
-
-                </td>
-                <td class="font-medium text-blue-600 ">
-                    <a href="index.php?route=delete-atelier&id=<?= $ligne["id_sports"] ?>"><button class="btn btn-danger">Modifier</button></a>
-
-                </td>
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "><?= $ligne["nom_sports"] ?></th>
+              <td class="font-medium text-blue-600">
+                <form method="post" action="">
+                  <input type="hidden" name="id" value="<?= $ligne["id_sports"] ?>">
+                  <button type="submit" name="delete" class="btn btn-danger">Supprimer</button>
+               </form>
+              </td>
             </tr>
-            <?php } ?>
-        </tbody>
-        </table>
-          </div>
-      </div>
-    </div>
+          <?php
+        }
+
+        if(isset($_POST['delete'])){
+          $id = $_POST['id'];
+          $sql = "DELETE FROM sport WHERE id_sports='$id'";
+          if ($mysqlConnection->query($sql) === TRUE) {
+              echo "";
+          } else {
+              echo "" . $mysqlConnection->errorCode();
+          }
+        }
+        ?>
+
+    </tbody>
     </p>
 
     <?php
