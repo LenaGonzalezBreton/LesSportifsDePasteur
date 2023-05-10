@@ -73,16 +73,14 @@ if (isset($_GET['route']) && $_GET['route'] == "delete-atelier" && isset($_GET['
         </div>
         <div class="form-group">
           <label for="sports" class="block mb-2 text-sm font-medium text-fuchsia-700 ">Sports</label>
-          <select class="form-control rounded-lg" id="sports" name="sports" placeholder="Sélectionner un sport">
             <option value="" disabled selected hidden>Choisir un sport</option>
             <?php
-            foreach ($sports as $ligne) {
-              ?>
-              <option value="<?= $ligne["id_sports"] ?>"><?= $ligne["nom_sports"] ?></option>
-              <?php
-            }
-            ?>
-          </select>
+                  foreach ($sports as $ligne){
+                      ?>
+                      <label><?= $ligne["nom_sports"]?> :<input type="checkbox" id="sports" name="sports[]" value="<?= $ligne["id_sports"]?>">
+                  <?php
+                  }
+                  ?>
         </div>
         <button type="submit" class="btn btn-primary text-white bg-fuchsia-900 shadow-lg hover:bg-fuchsia-700 hover:scale-105 focus:ring-4 focus:outline-none focus:ring-fuchsia-900 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Créer
           une séance</button>
